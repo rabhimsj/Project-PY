@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-py"
+version = "0.1.0"
+description = "TaskFlow Manager - a desktop task tracker"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Abhishek" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+project-py = "project_py.cli:main"
+
+[tool.setuptools]
+packages = ["project_py"]
+
+[tool.pytest.ini_options]
+pythonpath = ["backend"]
+testpaths = ["backend/tests", "tests"]
